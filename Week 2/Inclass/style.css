@@ -1,0 +1,18 @@
+        header {
+            background-color: rgb(14, 45, 59);
+            color: beige;
+        }
+
+        /* main {
+            width: 960px;
+            margin: 0px auto 0px auto;
+        } */
+
+        img {
+            max-width: 100%
+        }
+        
+        p {
+            color: palevioletred;
+            font-family: "Open Sans", Arial, sans-serif;
+        }
