@@ -31,7 +31,10 @@
         @media (min-width: 768px){
             main{
                 width: 700px;
-                margin: 0px, auto, 0px, auto;
+                margin: 0px auto;
+                display: flex;
+                gap: 30px;
+                align-items: center;
             }
             p{
                 columns: 2;
