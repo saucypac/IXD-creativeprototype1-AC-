@@ -31,10 +31,8 @@
                 margin: 0px auto;
                 display: flex;
             }
-            img{
-                width: 40%;
-            }
             p{
+                columns: 2;
                 color: darkslateblue;
                 font-family: Georgia, 'Times New Roman', Times, serif;
             }
