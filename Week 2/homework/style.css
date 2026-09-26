@@ -30,6 +30,7 @@
                 width: 700px;
                 margin: 0px auto;
                 display: flex;
+                flex-direction: column;
             }
             p{
                 columns: 2;
