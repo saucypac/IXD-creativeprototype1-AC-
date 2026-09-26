@@ -25,14 +25,15 @@
             }
         }
 
-
-
-
         @media (min-width: 768px){
             main{
                 width: 700px;
                 margin: 0px auto;
                 display: flex;
+                flex-direction: row;
+            }
+            img{
+                width: 40%;
             }
             p{
                 columns: 2;
