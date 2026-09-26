@@ -14,7 +14,16 @@
             font-family: "Open Sans", Arial, sans-serif;
         }
 
-        @media (min-width: 744px){
+        @media (min-width: 320px){
+            p{
+                color:blueviolet
+            }
+        }
+
+
+
+
+        @media (min-width: 768px){
             p{
                 columns: 2;
                 color: darkslateblue;
