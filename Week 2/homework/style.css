@@ -16,7 +16,8 @@
 
         @media (min-width: 320px){
             p{
-                color:blueviolet
+                color:blueviolet;
+                font-family: Arial, Helvetica, sans-serif
             }
         }
 
@@ -27,6 +28,7 @@
             p{
                 columns: 2;
                 color: darkslateblue;
+                font-family: Georgia, 'Times New Roman', Times, serif;
             }
         }
 
