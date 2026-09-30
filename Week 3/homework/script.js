@@ -1,7 +1,7 @@
 let imageOne = document.getElementById("imageOne")
-let imageTwo = document.getElementById("imageOne")
-let imageThree = document.getElementById("imageOne")
-let imageFour = document.getElementById("imageOne")
+let imageTwo = document.getElementById("imageTwo")
+let imageThree = document.getElementById("imageThree")
+let imageFour = document.getElementById("imageFour")
 
 let changingImage = (event) => {
     console.log(event.target)
