@@ -44,7 +44,7 @@ let checkPuzzle = () => {
 let changeTileOne = () =>{
 
     if(tileOneCorrect == false){
-        tileOne.src = "image/sto1 (1).png"
+        tileOne.src = "images/sto1 (1).png"
         tileOneCorrect = true
     }
 
@@ -59,7 +59,7 @@ let changeTileOne = () =>{
 let changeTileTwo = () =>{
 
     if(tileTwoCorrect == false){
-        tileTwo.src = "image/sto1 (2).png"
+        tileTwo.src = "images/sto1 (2).png"
         tileTwoCorrect = true
     }
 
@@ -74,7 +74,7 @@ let changeTileTwo = () =>{
 let changeTileThree = () =>{
 
     if(tileThreeCorrect == false){
-        tileThree.src = "image/sto1 (3).png"
+        tileThree.src = "images/sto1 (3).png"
         tileThreeCorrect = true
     }
 
@@ -89,7 +89,7 @@ let changeTileThree = () =>{
 let changeTileFour = () =>{
 
     if(tileFourCorrect == false){
-        tileFour.src = "image/sto1 (4).png"
+        tileFour.src = "images/sto1 (4).png"
         tileFourCorrect = true
     }
 
@@ -104,7 +104,7 @@ let changeTileFour = () =>{
 let changeTileFive = () =>{
 
     if(tileFiveCorrect == false){
-        tileFive.src = "image/sto1 (5).png"
+        tileFive.src = "images/sto1 (5).png"
         tileFiveCorrect = true
     }
 
@@ -119,7 +119,7 @@ let changeTileFive = () =>{
 let changeTileSix = () =>{
 
     if(tileSixCorrect == false){
-        tileSix.src = "image/sto1 (6).png"
+        tileSix.src = "images/sto1 (6).png"
         tileSixCorrect = true
     }
 
@@ -134,7 +134,7 @@ let changeTileSix = () =>{
 let changeTileSeven = () =>{
 
     if(tileSevenCorrect == false){
-        tileSeven.src = "image/sto1 (7).png"
+        tileSeven.src = "images/sto1 (7).png"
         tileSevenCorrect = true
     }
 
@@ -149,7 +149,7 @@ let changeTileSeven = () =>{
 let changeTileEight = () =>{
 
     if(tileEightCorrect == false){
-        tileEight.src = "image/sto1 (8).png"
+        tileEight.src = "images/sto1 (8).png"
         tileEightCorrect = true
     }
 
@@ -164,7 +164,7 @@ let changeTileEight = () =>{
 let changeTileNine = () =>{
 
     if(tileNineCorrect == false){
-        tileNine.src = "image/sto1 (9).png"
+        tileNine.src = "images/sto1 (9).png"
         tileNineCorrect = true
     }
 
