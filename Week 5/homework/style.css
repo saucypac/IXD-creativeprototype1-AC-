@@ -53,3 +53,8 @@ a {
         font-size: 22px;
     }
 }
+
+video { display: block; width: 100%; height: auto; margin: 20px 0; background: #eee; }
+figure { margin: 24px 0; }
+figure img { margin-bottom: 8px; }
+figcaption { color: #555; font-size: 14px; }

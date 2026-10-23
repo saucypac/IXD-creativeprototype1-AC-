@@ -1,0 +1,6 @@
+# Keep working Blender projects and backups out of Pages commits.
+*.blend
+*.blend[0-9]*
+archive/
+*.log
+__pycache__/

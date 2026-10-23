@@ -1,0 +1,82 @@
+[
+  {
+    "path": "process/01_initial_scene/concept_composition_sketches.jpeg",
+    "source": "images/sketches.jpeg",
+    "kind": "original sketch photograph"
+  },
+  {
+    "path": "process/01_initial_scene/rivian_phone_initial_composition.png",
+    "source": "images/update4.png",
+    "kind": "original modeling screenshot"
+  },
+  {
+    "path": "process/02_phone_modeling/phone_body_rounded_corners.png",
+    "source": "images/update1.png",
+    "kind": "original modeling screenshot"
+  },
+  {
+    "path": "process/02_phone_modeling/phone_screen_body_materials.png",
+    "source": "images/update2.png",
+    "kind": "original modeling screenshot"
+  },
+  {
+    "path": "process/02_phone_modeling/rivian_ui_screen_placement.png",
+    "source": "images/update3.png",
+    "kind": "original modeling screenshot"
+  },
+  {
+    "path": "process/03_hand_rigging/hand_grip_phone_position.png",
+    "source": "images/hand proof.png",
+    "kind": "original viewport screenshot"
+  },
+  {
+    "path": "process/03_hand_rigging/wrist_hand_adjustment.png",
+    "source": "images/hand proof2.png",
+    "kind": "original viewport screenshot"
+  },
+  {
+    "path": "process/04_lighting_environment/parking_environment_early_render.png",
+    "source": "images/update5.png",
+    "kind": "original scene render"
+  },
+  {
+    "path": "process/04_lighting_environment/lighting_camera_arm_scene_setup.png",
+    "source": "images/update new added lighting, shadows, and starting to place arms.png",
+    "kind": "original viewport screenshot"
+  },
+  {
+    "path": "process/05_animation/camera_phone_timeline_keyframes.png",
+    "source": "images/timeline proof.png",
+    "kind": "original viewport screenshot"
+  },
+  {
+    "path": "process/05_animation/v3_unlock_screen_feedback_frame080.png",
+    "source": "v3_validation/preview_080.png",
+    "kind": "existing V3 preview render"
+  },
+  {
+    "path": "process/05_animation/v2_animation_keyframe_review.png",
+    "source": "animation_v2_validation/keyframe_review.png",
+    "kind": "existing V2 render contact sheet"
+  },
+  {
+    "path": "process/06_frunk_development/v3_frunk_interior_side_diagnostic.png",
+    "source": "v3_validation/diagnostic_side.png",
+    "kind": "existing V3 diagnostic render"
+  },
+  {
+    "path": "process/06_frunk_development/v3_frunk_rim_floor_diagnostic.png",
+    "source": "v3_validation/diagnostic_threequarter.png",
+    "kind": "existing V3 diagnostic render"
+  },
+  {
+    "path": "process/07_final_results/v3_final_start_frame001.png",
+    "source": "animation_v3_final_frames/frame_0001.png",
+    "kind": "existing full-resolution V3 final render"
+  },
+  {
+    "path": "process/07_final_results/v3_final_open_frunk_frame300.png",
+    "source": "animation_v3_final_frames/frame_0300.png",
+    "kind": "existing full-resolution V3 final render"
+  }
+]

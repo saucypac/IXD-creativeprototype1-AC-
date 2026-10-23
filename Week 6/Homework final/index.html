@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rivian First-Person Vehicle Interaction — Blender Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Rivian First-Person Vehicle Interaction — Blender Prototype</h1>
+  <p>Week 6 · Final homework submission</p>
+  <section>
+    <h2>1. Project Introduction</h2>
+    <p>The goal of this Blender prototype was to create a first-person sequence showing a person using a phone to unlock a Rivian, receiving vehicle light feedback, approaching the car, and watching the front trunk open. The project developed from an initial phone-and-vehicle composition into a complete 10-second animated sequence.</p>
+    <figure>
+      <img src="process/07_final_results/v3_final_open_frunk_frame300.png" alt="Final rendered Rivian with its front trunk fully open in the parking environment" loading="lazy">
+      <figcaption>Completed V3 render, frame 300. The full animation is available in Section 11.</figcaption>
+    </figure>
+    <p><a href="#final-animation">Jump to Final Animation</a></p>
+  </section>
+
+  <section>
+    <h2>2. Initial Concept and Planning</h2>
+    <p>The initial sketches explored different ways to position a vehicle and a phone interface together. The selected exterior composition put the phone in the foreground and the Rivian behind it, establishing the relationship between an app action and the vehicle response.</p>
+    <figure>
+      <img src="process/01_initial_scene/concept_composition_sketches.jpeg" alt="Photograph of three original pencil sketches exploring phone and vehicle compositions" loading="lazy">
+      <figcaption>Original concept sketches retained from the Week 5 project.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>3. Building the 3D Scene</h2>
+    <p>The Rivian R1S model was imported from Sketchfab rather than modeled from scratch. The early scene positioned the vehicle beside the phone so both the interface and the vehicle remained readable.</p>
+    <p>An outdoor parking environment was then added to establish reflections and a setting for the interaction. Later camera placement adapted this initial arrangement into the first-person view shown in the animation.</p>
+    <figure>
+      <img src="process/01_initial_scene/rivian_phone_initial_composition.png" alt="Early Blender composition with orange Rivian behind the upright phone" loading="lazy">
+      <figcaption>Early vehicle-and-phone composition before the completed hand and animation work.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>4. Creating the Phone</h2>
+    <p>The phone body began as a plane with adjusted proportions, rounded corners, and added thickness. Beveling helped define the edges, while the screen and body received separate materials.</p>
+    <p>The Rivian interface image was applied to the screen and positioned to read as a phone display. In the completed scene, the phone and hand move together so the interface faces the first-person camera when raised.</p>
+    <figure>
+      <img src="process/02_phone_modeling/phone_body_rounded_corners.png" alt="Early gray phone body with rounded corners in Blender" loading="lazy">
+      <figcaption>Original modeling screenshot of the phone body.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/02_phone_modeling/rivian_ui_screen_placement.png" alt="Phone model displaying the Rivian interface texture in Blender" loading="lazy">
+      <figcaption>Original screenshot after interface placement.</figcaption>
+    </figure>
+    <figure class="interface-figure">
+      <img src="images/Minimal EV Control App Interface.png" alt="Rivian interface artwork with vehicle image, battery percentage and unlock controls" loading="lazy">
+      <figcaption>Original interface texture used on the phone screen.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Hand Rigging and Positioning</h2>
+    <p>The scene includes an imported hand model and a right-hand armature with 58 bones. The original viewport images document work around the phone grip and the wrist, while the final render shows the hand positioned around the phone.</p>
+    <p>These images support a comparison between the earlier viewport setup and the completed grip. A clear recording of individual finger-bone adjustments or a matched before-and-after of unnatural finger positions was not retained, so the exact editing steps are not claimed here.</p>
+    <figure>
+      <img src="process/03_hand_rigging/hand_grip_phone_position.png" alt="Original Blender viewport showing a hand wrapped around the back of the phone" loading="lazy">
+      <figcaption>Earlier hand-and-phone positioning screenshot.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/03_hand_rigging/wrist_hand_adjustment.png" alt="Close viewport view of the wrist beside a gray scene plane" loading="lazy">
+      <figcaption>Original wrist and surrounding-geometry inspection screenshot; it does not establish that every intersection was resolved.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/03_hand_rigging/v3_final_phone_grip_crop_frame080.png" alt="Rendered right hand holding the phone with the Rivian interface facing the camera" loading="lazy">
+      <figcaption>Detail crop from actual completed V3 frame 80. This is final-result evidence, not an earlier process screenshot.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. Environment and Lighting</h2>
+    <p>The parking-lot HDRI supplies the outdoor appearance and reflections. A ground surface and scene lighting help the vehicle sit within that environment, with the camera positioned to retain the interaction in view.</p>
+    <p>The original setup screenshot shows the camera, lighting, and arm placement, and the early render records the environmental appearance. Ground intersection and shadow preservation were review concerns; the available screenshots do not prove that every contact issue was completely eliminated.</p>
+    <figure>
+      <img src="process/04_lighting_environment/lighting_camera_arm_scene_setup.png" alt="Blender viewport showing vehicle, phone, arm, camera and lighting arrangement" loading="lazy">
+      <figcaption>Original scene-setup screenshot used to inspect positioning and lighting.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/04_lighting_environment/parking_environment_early_render.png" alt="Early render of the Rivian and phone in the outdoor environment" loading="lazy">
+      <figcaption>Early environmental render before the completed first-person sequence.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>7. First-Person Camera Animation</h2>
+    <p>The sequence raises the phone into view, holds it for the unlock interaction, and then lowers it. Vehicle feedback follows the phone action before the camera moves toward the Rivian.</p>
+    <p>The saved V3 camera animation refines the approach and introduces a gradual downward tilt toward the frunk. The timeline screenshot records animation keys; the videos below are excerpts and previews of the completed animation, not recordings of the editing process.</p>
+    <figure>
+      <img src="process/05_animation/camera_phone_timeline_keyframes.png" alt="Blender viewport and timeline with keyframes beneath the vehicle and phone scene" loading="lazy">
+      <figcaption>Original timeline screenshot documenting the animated setup.</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" aria-label="camera approach excerpt">
+        <source src="videos/camera_approach.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+        <a href="videos/camera_approach.mp4">Download camera approach excerpt</a>.
+      </video>
+      <figcaption>Actual V3 final-animation excerpt: source frames 106–300, approximately 3.50–10.00 seconds. <a href="videos/camera_approach.mp4">Open video</a>.</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" aria-label="V3 animation preview">
+        <source src="videos/animation_preview.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+        <a href="videos/animation_preview.mp4">Download V3 animation preview</a>.
+      </video>
+      <figcaption>Existing lower-resolution V3 preview showing the complete sequence. <a href="videos/animation_preview.mp4">Open video</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>8. Vehicle Unlock Feedback</h2>
+    <p>The vehicle response uses animated headlight emission, with the light flash following the phone unlock cue. The V3 screen highlight appears around frames 76–86; the headlight rise begins after frame 82.</p>
+    <p>Frames 82 and 90 show the lighting before and during the flash. V3 refined the phone control highlight while retaining the vehicle flash, making the app action and vehicle response easier to connect.</p>
+    <figure>
+      <img src="process/05_animation/v3_before_headlight_flash_frame082.png" alt="Rivian headlights at their pre-flash brightness while the phone is raised" loading="lazy">
+      <figcaption>Actual final-render frame 82, before the headlight emission rises.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/05_animation/v3_headlight_flash_frame090.png" alt="Rivian front light bar and headlights glowing brightly during the unlock response" loading="lazy">
+      <figcaption>Actual final-render frame 90, during the flash.</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" aria-label="phone unlock excerpt">
+        <source src="videos/phone_unlock_sequence.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+        <a href="videos/phone_unlock_sequence.mp4">Download phone unlock excerpt</a>.
+      </video>
+      <figcaption>Actual V3 final-animation excerpt: source frames 61–105, approximately 2.00–3.50 seconds. <a href="videos/phone_unlock_sequence.mp4">Open video</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>9. Frunk Animation</h2>
+    <p>Existing hood geometry is grouped under the animated FRUNK_HINGE_CTRL controller. Rotation around that hinge opens the hood later in the sequence, after the phone interaction and as the camera approaches.</p>
+    <p>The closed, partially open, and fully open frames below show the result of that timing. V3 refined the existing tub, rim, and floor materials without adding new storage geometry; the diagnostic views help inspect the interior and hood clearance.</p>
+    <p>The first-person angle still partly hides the lower frunk floor behind the front rim. The selected renders are useful clipping checks, but they are not proof that every frame is free of intersections.</p>
+    <figure>
+      <img src="process/07_final_results/v3_final_start_frame001.png" alt="Rivian with front trunk closed at the beginning of the animation" loading="lazy">
+      <figcaption>Closed frunk: actual V3 final-render frame 1.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/06_frunk_development/v3_frunk_partially_open_frame240.png" alt="Rivian hood partway open during the camera approach" loading="lazy">
+      <figcaption>Partially open frunk: actual V3 final-render frame 240.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/07_final_results/v3_final_open_frunk_frame300.png" alt="Rivian front trunk fully open at the end of the approach" loading="lazy">
+      <figcaption>Fully open frunk: actual V3 final-render frame 300.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/06_frunk_development/v3_frunk_interior_side_diagnostic.png" alt="Elevated side diagnostic render revealing the frunk tub and floor" loading="lazy">
+      <figcaption>Existing V3 diagnostic render; an inspection view rather than the animation camera.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/06_frunk_development/v3_frunk_rim_floor_diagnostic.png" alt="Elevated three-quarter diagnostic view of the frunk rim and interior surfaces" loading="lazy">
+      <figcaption>Existing V3 diagnostic render showing the refined interior materials.</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" aria-label="frunk opening excerpt">
+        <source src="videos/frunk_opening_sequence.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+        <a href="videos/frunk_opening_sequence.mp4">Download frunk opening excerpt</a>.
+      </video>
+      <figcaption>Actual V3 final-animation excerpt: source frames 181–270, approximately 6.00–9.00 seconds. <a href="videos/frunk_opening_sequence.mp4">Open video</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>10. Challenges and Iterations</h2>
+    <p>The earlier documentation identified consistent phone corners and matching the vehicle to the environment as challenges. The phone-body screenshot and later textured phone show the progression from basic geometry to a readable interface.</p>
+    <p>Hand placement required inspecting the grip and wrist in relation to nearby geometry. The earlier viewport views and final grip detail show the available iteration evidence, but do not justify claiming a complete fix for every finger or ground-plane intersection.</p>
+    <p>Unlock feedback needed a clear relationship between the phone and the vehicle lights. The final before/during frames show the flash, while V3 refined the screen highlight without changing the existing headlight animation.</p>
+    <p>The frunk interior was easier to inspect from elevated views than from the first-person camera. Material refinements and a closer, slightly downward camera approach improved its presentation, although the lower floor remains partly occluded.</p>
+  </section>
+
+  <section id="final-animation">
+    <h2>Final Animation</h2>
+    <p>The completed V3 animation combines the phone raise, unlock cue, vehicle light feedback, phone lowering, camera approach, and frunk opening. The actual final MP4 is embedded below at its original 16:9 aspect ratio, with native playback and fullscreen controls.</p>
+    <p>Final output: 1920 × 1080, 30 fps, 300 frames, 10 seconds. The three stills below show the start, unlock response, and completed open-frunk composition.</p>
+    <figure>
+      <video controls playsinline preload="metadata" poster="process/07_final_results/v3_final_open_frunk_frame300.png" aria-label="final V3 animation">
+        <source src="videos/final_animation.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+        <a href="videos/final_animation.mp4">Download final V3 animation</a>.
+      </video>
+      <figcaption>Completed V3 final render. Use the player controls to play, seek, or enter fullscreen. <a href="videos/final_animation.mp4">Open video</a>.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/07_final_results/v3_final_start_frame001.png" alt="Final V3 opening view of the Rivian with its hood closed" loading="lazy">
+      <figcaption>Final animation, frame 1: opening composition.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/05_animation/v3_headlight_flash_frame090.png" alt="Final V3 unlock interaction showing the phone and bright headlights" loading="lazy">
+      <figcaption>Final animation, frame 90: phone interaction and vehicle response.</figcaption>
+    </figure>
+    <figure>
+      <img src="process/07_final_results/v3_final_open_frunk_frame300.png" alt="Final V3 close approach to the Rivian with front trunk open" loading="lazy">
+      <figcaption>Final animation, frame 300: completed approach and open frunk.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>12. Reflection</h2>
+    <p>This project brings together basic modeling, image textures, imported assets, rig positioning, lighting, and animation. The development images show how much the result depends on the relationship between the phone, hand, vehicle, and camera.</p>
+    <p>Animation makes the intended interaction clearer than the original static composition because the app action and vehicle response unfold in order. Further refinement could focus on finger contact, checking intersections throughout the motion, and making the frunk floor more visible without losing the first-person perspective.</p>
+  </section>
+
+  <section>
+    <h2>13. References and Resources</h2>
+    <p>The following resources were recorded in the earlier documentation or supplied as known project resources. The hand model and parking HDRI are present in the scene, but their original download links were not recorded in the available documentation.</p>
+    <ul>
+      <li><a href="https://www.blender.org/">Blender — modeling, rigging, animation, rendering, and video sequencing</a></li>
+      <li><a href="https://sketchfab.com/3d-models/rivian-r1s-2022-ec0499cccfa74b52939e1491b2434a71">Sketchfab — Rivian R1S (2022) vehicle model</a></li>
+      <li><a href="https://www.youtube.com/watch?v=VGDAb9vXW9A">Previously documented Blender video tutorial</a></li>
+    </ul>
+    <p>The editable Blender project is retained locally alongside this page. It exceeds the ordinary Git file-size limit and is excluded from the website commit. Its external parking HDRI and installed Blender node-library dependencies remain accessible on the project computer.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+main { max-width: 950px; margin: 0 auto; padding: 36px 24px 60px; }
+h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 20px; }
+h2 { font-size: 1.5rem; line-height: 1.35; margin: 0 0 20px; }
+section { border-top: 1px solid #ddd; margin-top: 40px; padding-top: 28px; }
+p { margin: 0 0 20px; }
+figure { margin: 28px 0; }
+img, video { display: block; max-width: 100%; height: auto; }
+video { width: 100%; aspect-ratio: 16 / 9; background: #eee; }
+figcaption { margin-top: 8px; color: #555; font-size: 0.9rem; }
+a { color: #174b83; overflow-wrap: anywhere; }
+.interface-figure img { max-height: 560px; width: auto; }
+li { margin-bottom: 10px; }
+@media (max-width: 600px) {
+  main { padding: 24px 16px 40px; }
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.3rem; }
+}
