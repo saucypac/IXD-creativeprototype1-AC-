@@ -16,7 +16,7 @@ Original screenshots, sketches, and renders were copied without changing their p
 
 ## Videos
 
-final_animation.mp4 is the actual completed V3 export. animation_preview.mp4 is its existing lower-resolution preview. The other three videos are excerpts of the actual final V3 export, not recordings of the editing process: phone unlock frames 61–105; frunk opening frames 181–270; camera approach frames 106–300.
+final_animation.mp4 is the actual completed V3 export. animation_preview.mp4 is its existing lower-resolution preview. The other three videos are excerpts of the actual final V3 export, not recordings of the editing process: phone unlock frames 61â€“105; frunk opening frames 181â€“270; camera approach frames 106â€“300.
 
 ## Evidence limits
 
