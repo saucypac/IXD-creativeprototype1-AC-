@@ -1,0 +1,39 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222
+    background-color white;
+}
+header {
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+blockquote {
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+}
