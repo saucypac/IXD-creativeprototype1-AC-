@@ -1,175 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mirrored Circle Pattern: p5.js Documentation</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 p5.js sketches</title>
 </head>
 <body>
-<main>
+    <h1>Rotation and Oscillation</h1>
 
-<h1>Mirrored Circle Pattern: p5.js Documentation</h1>
-<p class="byline">By Alvin</p>
+    <iframe
+        src="rotation-and-oscillation/index.html"
+        width="850"
+        height="650">
+    </iframe>
 
-<p>This sketch fills the whole window with a grid of nested circles and squares that vary in hue, saturation, ring count, and shape. It uses HSB color mode, loops to repeat the pattern, and symmetry so the left side mirrors the right and the top mirrors the bottom.</p>
+    <h1>Oscillating Rings</h1>
 
-<h2>Problems and solutions</h2>
-<ol>
-  <li><strong>The first version was too complicated for a beginner assignment.</strong> It used animation, rotation, and <code>push()</code>/<code>pop()</code> with <code>scale()</code> flips. I removed all of it and kept only loops, HSB, and one simple symmetry rule.</li>
-  <li><strong>Making the pattern symmetric.</strong> Using plain x and y positions gave a different color on each side of the window. I fixed this by measuring distance from the center with <code>abs()</code> instead of using the raw position.</li>
-  <li><strong>The mirror line landed on a tile.</strong> With an odd number of columns, the middle column sat on the center line, so the pattern looked lopsided. I set the number of columns to an even number (12) so the center falls between two tiles.</li>
-  <li><strong>The grid did not fill the window.</strong> A fixed number of rows left gaps on tall or short windows. I calculated the tile width from the column count and chose the number of rows from the window height.</li>
-  <li><strong>The top and bottom did not mirror exactly.</strong> My first version used <code>ceil(height / size)</code> for the rows, so the grid ran past the bottom edge and its center was no longer the window's center. I fixed it by rounding the rows to an even number and setting the tile height to <code>height / rows</code>, so the tiles fit the window exactly.</li>
-  <li><strong>Resizing the window broke the layout.</strong> Because the sketch draws only once, it did not update on resize. <code>windowResized()</code> now resizes the canvas and calls <code>redraw()</code>.</li>
-  <li><strong>There was too little variation.</strong> Only the hue changed from tile to tile, so the pattern looked uniform. I added saturation that grows toward the edges, a different ring count per tile, and tiles that alternate between circles and squares.</li>
-  <li><strong>The hue could go past 360.</strong> Hue values above 360 are outside the HSB range I set. I used <code>% 360</code> to wrap the value back around.</li>
-</ol>
-
-<h2>The most interesting problem: symmetry</h2>
-<p>The hardest part was making one side of the window match the other. My first idea was to draw the left half and then flip it for the right half. That works, but it needs <code>scale(-1, 1)</code>, <code>push()</code>, and <code>pop()</code>, which made the code hard to read. The real question was simpler: what do two mirrored circles have in common? The answer is that they are the same distance from the center, just on opposite sides of it.</p>
-<p>The solution was <code>abs()</code>. Subtracting the center, <code>x - width / 2</code>, gives a negative number on the left and a positive number on the right. <code>abs()</code> removes the sign, so a circle 300 pixels left of center and one 300 pixels right of center both give 300. I use that distance to pick the hue, so mirrored circles get the same color automatically. The same trick on the y axis mirrors the top and bottom. I also had to use an even number of columns and rows, otherwise one column or row sits exactly on the center line and has no mirror partner.</p>
-
-<h2>Three stages of building</h2>
-
-<h3>Stage 1: a grid with loops</h3>
-<p>The goal here was only to get the tiling right. Every circle is white, and two loops (rows and columns) place them across the window.</p>
-<figure>
-  <img src="stage-1.png" alt="Stage 1 output: a grid of white circles on a dark background">
-  <figcaption>Stage 1 output: a grid of white circles on a dark background.</figcaption>
-</figure>
-<pre><code>function setup() {
-  createCanvas(windowWidth, windowHeight);
-  noStroke();
-  noLoop();
-}
-
-function draw() {
-  background(20);
-  let cols = 12;
-  let size = width / cols;
-  let rows = ceil(height / size);
-
-  for (let row = 0; row &lt; rows; row++) {
-    for (let col = 0; col &lt; cols; col++) {
-      fill(255);
-      circle(col * size + size / 2, row * size + size / 2, size);
-    }
-  }
-}</code></pre>
-
-<h3>Stage 2: HSB color and symmetry</h3>
-<p>Now the circles get color. <code>colorMode(HSB)</code> lets one number, the hue, control the color. The hue comes from the distance to the center, which creates the symmetry left to right. Top to bottom it is only approximate here, and Stage 3 fixes that.</p>
-<figure>
-  <img src="stage-2.png" alt="Stage 2 output: a grid of brightly colored circles, with colors mirrored left to right">
-  <figcaption>Stage 2 output: colored circles mirrored left to right.</figcaption>
-</figure>
-<pre><code>function setup() {
-  createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 360, 100, 100);
-  noStroke();
-  noLoop();
-}
-
-function draw() {
-  background(0, 0, 10);
-  let cols = 12;
-  let size = width / cols;
-  let rows = ceil(height / size);
-
-  for (let row = 0; row &lt; rows; row++) {
-    for (let col = 0; col &lt; cols; col++) {
-      let x = col * size + size / 2;
-      let y = row * size + size / 2;
-
-      let dx = abs(x - width / 2);
-      let dy = abs(y - height / 2);
-      let hue = (dx * 0.3 + dy * 0.3) % 360;
-
-      fill(hue, 80, 100);
-      circle(x, y, size);
-    }
-  }
-}</code></pre>
-
-<h3>Stage 3: variation (final version)</h3>
-<p>The final version adds variation. Every tile follows the same rules, but the result changes depending on where the tile sits:</p>
-<ul>
-  <li><strong>Hue:</strong> it changes with the distance from the center, and each inner ring shifts it by 40.</li>
-  <li><strong>Saturation:</strong> <code>map()</code> raises it from 40 near the center to 100 at the edges.</li>
-  <li><strong>Ring count:</strong> each tile gets 2 to 5 rings.</li>
-  <li><strong>Shape:</strong> tiles alternate between circles and squares.</li>
-</ul>
-<p>The ring count and shape come from <code>min(col, cols - 1 - col)</code>, which counts tiles from the nearest edge, so the variation is mirrored too. The rows are now an even number, so the top and bottom mirror exactly.</p>
-
-<figure>
-  <img src="stage-3.png" alt="Stage 3 output: nested circles and squares in a mirrored pattern that shifts from pink at the corners to yellow at the center">
-  <figcaption>Stage 3 output: nested circles and squares, mirrored on both axes.</figcaption>
-</figure>
-<pre><code>// Mirrored pattern with variation in color, shape, size and ring count.
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 360, 100, 100);
-  rectMode(CENTER);
-  noStroke();
-  noLoop();
-}
-
-function draw() {
-  background(0, 0, 10);
-
-  let cols = 12;                         // even numbers so the mirror line
-  let tileW = width / cols;              // falls between tiles
-  let rows = 2 * round(height / tileW / 2);
-  let tileH = height / rows;
-  let size = min(tileW, tileH);
-
-  for (let row = 0; row &lt; rows; row++) {
-    for (let col = 0; col &lt; cols; col++) {
-      let x = col * tileW + tileW / 2;
-      let y = row * tileH + tileH / 2;
-
-      // distance from the center: same on both sides
-      let dx = abs(x - width / 2);
-      let dy = abs(y - height / 2);
-
-      // variation 1: hue changes with distance from the center
-      let hue = (dx * 0.3 + dy * 0.3) % 360;
-
-      // variation 2: saturation grows toward the edges
-      let sat = map(dx + dy, 0, width / 2 + height / 2, 40, 100);
-
-      // mirrored tile numbers: 0 at the edges, rising toward the center
-      let mirrorCol = min(col, cols - 1 - col);
-      let mirrorRow = min(row, rows - 1 - row);
-      let step = mirrorCol + mirrorRow;
-
-      // variation 3: each tile gets 2 to 5 rings
-      let rings = 2 + step % 4;
-
-      for (let ring = 0; ring &lt; rings; ring++) {
-        let d = size * (1 - ring / rings);
-        fill((hue + ring * 40) % 360, sat, 100 - ring * 15);
-
-        // variation 4: tiles alternate between circles and squares
-        if (step % 2 === 0) {
-          circle(x, y, d);
-        } else {
-          rect(x, y, d, d);
-        }
-      }
-    }
-  }
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  redraw();
-}</code></pre>
-
-<p>Project link: <a href="https://editor.p5js.org/no360717/full/GoZZ5rESi" target="_blank" rel="noopener">https://editor.p5js.org/no360717/full/GoZZ5rESi</a></p>
-
-</main>
+    <iframe
+        src="oscillating-rings/index.html"
+        width="850"
+        height="650">
+    </iframe>
 </body>
 </html>

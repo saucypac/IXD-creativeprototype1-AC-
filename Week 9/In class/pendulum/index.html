@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Animation Documentation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Pendulum Animation Documentation</h1>
+
+    <p>
+        This project explores motion using trigonometric functions,
+        time-based movement, randomness, and Perlin noise.
+        The following six stages document the development of
+        my animation.
+    </p>
+
+    <h2>Stage 1 - Creating the Pendulum</h2>
+    <img src="stage1.png" alt="Initial pendulum">
+    <p>
+        I began by creating a stationary pendulum using a line
+        and a circle. This established the basic structure
+        of my animation.
+    </p>
+
+    <h2>Stage 2 - Adding the Ball</h2>
+    <img src="stage2.png" alt="Pendulum and ball">
+    <p>
+        I added a second circle to the canvas and positioned
+        it separately from the pendulum. Both shapes remained
+        stationary during this stage.
+    </p>
+
+    <h2>Stage 3 - Adding Movement</h2>
+    <video autoplay muted loop playsinline>
+        <source src="stage3.mp4" type="video/mp4">
+    </video>
+    <p>
+        I introduced movement to both shapes. The pendulum
+        swings using a cosine function, while the ball moves
+        using velocity and bounces against the canvas edges.
+    </p>
+
+    <h2>Stage 4 - Motion Trails</h2>
+    <video autoplay muted loop playsinline>
+        <source src="stage4.mp4" type="video/mp4">
+    </video>
+    <p>
+        I introduced motion trails by storing the ball's previous
+        positions in an array. Each trailing circle gradually
+        changes in size and opacity.
+    </p>
+
+    <h2>Stage 5 - Timed and Organic Movement</h2>
+    <video autoplay muted loop playsinline>
+        <source src="stage5.mp4" type="video/mp4">
+    </video>
+    <p>
+        I used millis() to change the ball's velocity every
+        two seconds. I also added Perlin noise to create
+        more organic movement independent of the pendulum.
+    </p>
+
+    <h2>Stage 6 - Final Refinements</h2>
+    <video autoplay muted loop playsinline>
+        <source src="stage6.mp4" type="video/mp4">
+    </video>
+    <p>
+        I added glowing effects, continuously changing colors,
+        and colorful motion trails. These changes made the
+        animation more visually engaging while preserving
+        the independent movements.
+    </p>
+
+    <h2>Final p5.js Animation</h2>
+    <p>
+        The final interactive sketch is embedded below.
+    </p>
+
+    <iframe
+        src="https://editor.p5js.org/no360717/full/ZiGA-GUW3"
+        width="800"
+        height="620"
+        title="Final p5.js Animation"
+        loading="lazy">
+    </iframe>
+
+</body>
+</html>
