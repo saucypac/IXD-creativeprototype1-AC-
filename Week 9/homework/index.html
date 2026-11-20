@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Living Ecosystem | p5.js Documentation</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+
+    <!-- HEADER -->
+    <header>
+      <p class="label">P5.JS / OBJECT-ORIENTED PROGRAMMING</p>
+      <h1>Living Ecosystem</h1>
+
+      <p class="intro">
+        An interactive underwater environment exploring
+        how individual objects influence one another
+        through simple rules and relationships.
+      </p>
+    </header>
+
+
+    <!-- PROJECT INTENT -->
+    <section>
+      <h2>01 / Project Intent</h2>
+
+      <p>
+        For this project, I wanted to create an underwater
+        ecosystem where different organisms could interact
+        with one another. Rather than having everything
+        follow a fixed animation, I wanted each object
+        to respond to what was happening around it.
+      </p>
+
+      <p>
+        Fish search for food, avoid predators, and move
+        alongside other fish. Predators chase nearby fish,
+        while food provides a reason for fish to gather.
+        These simple relationships create more complex
+        behaviors throughout the environment.
+      </p>
+    </section>
+
+
+    <!-- INTERACTIVE SIMULATION -->
+    <section>
+      <h2>02 / Interactive Simulation</h2>
+
+      <p>
+        This is the completed interactive ecosystem.
+        Users can influence the environment by adding
+        food, fish, or predators.
+      </p>
+
+      <div class="controls-info">
+        <p><strong>Mouse Click:</strong> Add food</p>
+        <p><strong>F:</strong> Add fish</p>
+        <p><strong>P:</strong> Add predator</p>
+        <p><strong>R:</strong> Reset ecosystem</p>
+      </div>
+
+      <!-- Replace the URL with your actual p5.js fullscreen link -->
+      <div class="sketch-container">
+        <iframe
+          src="https://editor.p5js.org/no360717/full/QB62lTdYF"
+          title="Interactive Underwater Ecosystem"
+          width="800"
+          height="600"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+
+    <!-- UML DIAGRAM -->
+    <section>
+      <h2>03 / UML Class Diagram</h2>
+
+      <p>
+        The system uses three main classes: Fish,
+        Food, and Predator. Each class contains
+        properties and methods that define its
+        appearance and behavior.
+      </p>
+
+      <p>
+        Fish interact with food by searching for
+        and consuming it. Predators hunt fish,
+        while fish respond by avoiding danger
+        and grouping with nearby fish.
+      </p>
+
+      <div class="diagram">
+        <pre class="mermaid">
+classDiagram
+
+  class Fish {
+    +pos
+    +vel
+    +speed
+    +size
+    +energy
+    +dead
+    +move()
+    +findFood()
+    +avoidPredators()
+    +school()
+    +display()
+  }
+
+  class Food {
+    +pos
+    +eaten
+    +offset
+    +display()
+  }
+
+  class Predator {
+    +pos
+    +vel
+    +speed
+    +size
+    +hunt()
+    +move()
+    +display()
+  }
+
+  Fish ..> Food : seeks and eats
+  Fish ..> Predator : avoids
+  Predator ..> Fish : hunts
+  Fish ..> Fish : schools
+        </pre>
+      </div>
+    </section>
+
+
+    <!-- FLOWCHART -->
+    <section>
+      <h2>04 / System Flowchart</h2>
+
+      <p>
+        The flowchart explains how the ecosystem
+        continuously updates. Each frame, objects
+        check their surroundings, respond to nearby
+        organisms, and update their positions.
+      </p>
+
+      <div class="diagram">
+        <pre class="mermaid">
+flowchart TD
+
+  A[Start Simulation] --> B[Create Fish, Food, Predators]
+
+  B --> C[Draw Underwater Environment]
+
+  C --> D[Update Fish Movement]
+
+  D --> E[Seek Food, Avoid Predators, School]
+
+  E --> F[Predators Hunt Fish]
+
+  F --> G[Remove Eaten Food and Caught Fish]
+
+  G --> H[Generate New Food Periodically]
+
+  H --> I[Display Population Counts]
+
+  I --> J{User Input?}
+
+  J -->|Mouse Click| K[Add Food]
+
+  J -->|F Key| L[Add Fish]
+
+  J -->|P Key| M[Add Predator]
+
+  J -->|R Key| N[Reset Ecosystem]
+
+  J -->|None| C
+
+  K --> C
+  L --> C
+  M --> C
+  N --> C
+        </pre>
+      </div>
+    </section>
+
+
+    <!-- DEVELOPMENT PROCESS -->
+    <section>
+      <h2>05 / Development Process</h2>
+
+      <p>
+        I developed the project in five stages,
+        gradually introducing new elements and
+        interactions into the underwater environment.
+      </p>
+
+
+      <!-- STAGE 1 -->
+      <div class="stage">
+        <h3>Stage 1 — Underwater Environment</h3>
+
+        <p>
+          I started by creating the underwater setting
+          using basic shapes and animation. I added
+          light rays, rising bubbles, and swaying
+          seaweed to make the environment feel alive.
+        </p>
+
+        <video autoplay loop muted playsinline controls>
+          <source src="stage1.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+
+
+      <!-- STAGE 2 -->
+      <div class="stage">
+        <h3>Stage 2 — Fish Objects</h3>
+
+        <p>
+          I created a Fish class using Object-Oriented
+          Programming. Each fish has its own position,
+          velocity, size, and color, allowing multiple
+          fish to move independently throughout the
+          environment.
+        </p>
+
+        <video autoplay loop muted playsinline controls>
+          <source src="stage2.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+
+
+      <!-- STAGE 3 -->
+      <div class="stage">
+        <h3>Stage 3 — Food Relationships</h3>
+
+        <p>
+          I introduced a Food class and programmed
+          fish to detect nearby food. When food is
+          within range, fish gradually change direction
+          toward it and consume it when close enough.
+          Eating food also restores their energy.
+        </p>
+
+        <video autoplay loop muted playsinline controls>
+          <source src="stage3.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+
+
+      <!-- STAGE 4 -->
+      <div class="stage">
+        <h3>Stage 4 — Predators and Emergent Behavior</h3>
+
+        <p>
+          I added predators that search for and chase
+          nearby fish. Fish respond by swimming away
+          from danger. I also introduced schooling
+          and separation behaviors, allowing fish
+          to move together while avoiding crowding.
+        </p>
+
+        <video autoplay loop muted playsinline controls>
+          <source src="stage4.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+
+
+      <!-- STAGE 5 -->
+      <div class="stage">
+        <h3>Stage 5 — User Interaction</h3>
+
+        <p>
+          I added mouse and keyboard controls so
+          users can directly influence the ecosystem.
+          Clicking adds food, while keyboard inputs
+          introduce new fish or predators and reset
+          the environment.
+        </p>
+
+        <video autoplay loop muted playsinline controls>
+          <source src="stage5.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </section>
+
+
+    <!-- EMERGENT BEHAVIOR -->
+    <section>
+      <h2>06 / Emergent Behavior</h2>
+
+      <p>
+        One of the most interesting parts of this
+        project is how the fish behave as a group.
+        Each fish follows a relatively simple set
+        of rules, but their interactions create
+        larger movement patterns.
+      </p>
+
+      <p>
+        Fish may gather around food, scatter when
+        predators approach, and regroup afterward.
+        These behaviors are not controlled by a
+        predetermined animation. Instead, they
+        emerge from the relationships between
+        individual objects.
+      </p>
+    </section>
+
+
+    <!-- REFLECTION -->
+    <section>
+      <h2>07 / Reflection</h2>
+
+      <p>
+        This project helped me understand how
+        Object-Oriented Programming can be used
+        to create interactive systems. By separating
+        organisms into classes, I was able to give
+        each object its own properties and behaviors
+        while allowing them to interact.
+      </p>
+
+      <p>
+        The most interesting challenge was combining
+        multiple behaviors without making the
+        movement feel too mechanical. Small changes
+        to the environment, such as introducing
+        additional food or predators, could affect
+        how the entire ecosystem behaved.
+      </p>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Living Ecosystem | p5.js Creative Coding</p>
+    </footer>
+
+  </main>
+
+
+  <!-- MERMAID DIAGRAM LIBRARY -->
+  <script type="module">
+    import mermaid from
+      "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "light",
+      securityLevel: "strict"
+    });
+  </script>
+
+</body>
+</html>
